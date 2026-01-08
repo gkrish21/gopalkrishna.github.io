@@ -120,18 +120,57 @@ Test at these breakpoints:
 4. Check responsive layouts at 768px breakpoint
 5. Validate HTML/CSS if making structural changes
 
+## Deployment
+
+### GitHub Pages
+The portfolio is deployed on GitHub Pages:
+- **Repository**: https://github.com/gkrish21/gopalkrishna.github.io
+- **Live URL**: https://gkrish21.github.io/gopalkrishna.github.io
+- **Branch**: main
+- **GitHub Username**: gkrish21
+
+### Enabling GitHub Pages (Manual Setup)
+If GitHub Pages needs to be enabled:
+1. Go to repository Settings → Pages
+2. Source: Deploy from branch
+3. Branch: `main`
+4. Folder: `/ (root)`
+5. Save
+
+Changes pushed to the main branch automatically trigger a rebuild (takes 1-2 minutes).
+
+### Formspree Integration
+The contact form is configured for Formspree integration:
+- Form action URL placeholder: `https://formspree.io/f/YOUR_FORM_ID` (index.html:334)
+- Setup instructions:
+  1. Sign up at https://formspree.io
+  2. Create new form
+  3. Replace `YOUR_FORM_ID` with actual form ID
+  4. Configure notification email (gopal.1987@gmail.com)
+- Free tier: 50 submissions/month
+
+### Deployment Workflow
+```bash
+# Make changes locally
+# Test changes in browser
+
+# Commit and push
+git add .
+git commit -m "Description of changes"
+git push origin main
+
+# Wait 1-2 minutes for GitHub Pages rebuild
+```
+
 ## Known Limitations & TODOs
 
 **Incomplete Content**
-- Profile image is placeholder (index.html:56)
-- Email addresses are placeholders (index.html:231, 274)
-- GitHub links are placeholder "#" (index.html:273, 192, 213)
-- Experience section has limited detail (index.html:88-113)
+- Profile image is placeholder (index.html:56) - using CSS gradient for now
 - Project images are gradient placeholders (styles.css:544-549)
+- Formspree form ID needs to be configured (index.html:334)
 
 **Missing Functionality**
-- Contact form has no submission handler - needs backend integration or service like Formspree/Netlify Forms
-- No form validation beyond HTML5 `required` attributes
+- Contact form needs Formspree form ID to be functional
 - Mobile menu doesn't close on outside click or escape key
 - No analytics or tracking
 
