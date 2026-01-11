@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const icon = themeToggle.querySelector('i');
 
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
-        updateIcon(savedTheme);
+    // Check for saved theme preference, default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+    if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'dark');
     }
 
     themeToggle.addEventListener('click', () => {
